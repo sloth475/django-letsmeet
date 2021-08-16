@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}lets meet{% endblock page_title %}Let's meet</title>
+    <link rel="stylesheet" href="{% static 'app.css' %}"/>
+    {% block css_files %}{% endblock css_files %}
+</head>
+<body>
+<header id="main-navigation">
+    <h1><a href="{% url 'starting-page' %}">Let's meet</a></h1>
+    <nav>
+        <a href="{% url 'add-post' %}">Add Event &nbsp; </a>
+        <a href="{% url 'all-posts' %}">All Events &nbsp; </a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+      </li>
+        {% else %}
+        <a class="nav-link" href="/login">Login</a>
+        {% endif %}
+    </nav>
+</header>
+{% block content %}
+{% endblock content %}
+</body>
+</html>

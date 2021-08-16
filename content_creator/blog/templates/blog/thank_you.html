@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+Thank you
+{% endblock %}
+
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/posts.css' %}" />
+<link rel="stylesheet" href="{% static 'blog/stored_posts.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section id="stored-posts">
+    <h2>Thank You!!</h2>
+    <p>
+        {{ message }}
+    </p>
+</section>
+{% endblock %}

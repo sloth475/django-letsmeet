@@ -1,0 +1,17 @@
+{% load static %}
+ 
+ <li>
+    <article class="post">
+    <a href="{% url 'selected-post' post.slug %}">
+        <img src="{% static 'blog/images/'|add:post.image %}" alt="{{ post.title }}"/>
+        <div class="post__content">
+            <h3>{{ post.title|title }}</h3>
+            <h3>organized by:{{ post.author}}</h3>
+<!--            <p>{{ post.summary }}</p>-->
+            <h5>date:{{ post.date }}</h5>
+            <h5>total seats:{{post.total_seats }}</h5>
+            <h5>total registrations:{{post.total_seats }}</h5>
+        </div>
+    </a>
+    </article>
+</li>
